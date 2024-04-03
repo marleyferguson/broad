@@ -1,4 +1,5 @@
 import requests as r
+import sys
 
 #defines a subway route with an id, long_name, and stops
 class Route():
@@ -165,26 +166,15 @@ def find_route(stop1,stop2,routes):
             
                 
 def main():
-    routes = create_routes()
-    routes = add_stops(routes)
-    
-    #Question 1:
-    print(get_route_long_names())
-    
-    #Question 2: 
-    #2.1
-    print(get_route_max_stops(routes))
-    #2.2
-    print(get_route_min_stops(routes))
-    #2.3
-    print(shared_stops(routes))
-    
-    
-    #Question 3:
-    print(find_route("Wonderland","Northeastern University",routes))
-    
-    
-if __name__ == "__main__":
-    main()
-            
+    if len(sys.argv) < 2:
+            print("Usage: python my_script.py [function_name]")
+            return
+
+        function_name = sys.argv[1]
+        if function_name == "question1":
+            get_route_long_names()
+        
+        else:
+            print("Unknown function:", function_name)
+
 
