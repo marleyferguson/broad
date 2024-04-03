@@ -170,11 +170,11 @@ def main():
             print("Usage: python my_script.py [function_name]")
             return
 
-        function_name = sys.argv[1]
-        if function_name == "question1":
-            get_route_long_names()
+    function_name = sys.argv[1]
+    if function_name == "question1":
+        get_route_long_names()
         
-        else:
-            print("Unknown function:", function_name)
+    else:
+        print("Unknown function:", function_name)
 
 
