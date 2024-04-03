@@ -173,6 +173,7 @@ def main():
     function_name = sys.argv[1]
     if function_name == "question1":
         get_route_long_names()
+        exit()
 
         
     else:
