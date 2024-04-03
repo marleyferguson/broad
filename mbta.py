@@ -112,11 +112,11 @@ def stop_to_route(routes):
 
 #returns stops that connect 2 or more routes with connecting routes mapped  
 def shared_stops(routes):
-    stop_to_route = stop_to_route(routes)
+    stops_routes = stop_to_route(routes)
     shared_stops ={}       
-    for stop in stop_to_route:
-        if len(stop_to_route[stop]) >1:
-            val = list(map(lambda x:x.long_name,stop_to_route[stop] ))            
+    for stop in stops_routes:
+        if len(stops_routes[stop]) >1:
+            val = list(map(lambda x:x.long_name,stops_routes[stop] ))            
             shared_stops[stop] = val
     return shared_stops
 
