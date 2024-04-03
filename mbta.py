@@ -172,7 +172,8 @@ def main():
 
     function_name = sys.argv[1]
     if function_name == "question1":
-        get_route_long_names()
+        names = get_route_long_names()
+        print(names)
         
     else:
         print("Unknown function:", function_name)
