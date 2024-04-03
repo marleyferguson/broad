@@ -131,7 +131,7 @@ def find_route(stop1,stop2,routes):
     stop2_routes = stops_w_routes[stop2]
     
     #stops with multiple routes, mapped to their routes
-    nodes = shared_stops(stops_w_routes)
+    nodes = shared_stops(routes)
 
     visited_routes =[]
     Q =[]
@@ -153,7 +153,7 @@ def find_route(stop1,stop2,routes):
                     rt = current_route.long_name
                 
                 #if find it, return it
-                if stop2 in rt_to_stop[current_route.long_name]:
+                if stop2 in current_route.stops:
                     return rt
                 #dont find it, mark route as visited
                 else:
@@ -162,7 +162,8 @@ def find_route(stop1,stop2,routes):
                 for s in current_route.stops:
                     if s in nodes:
                         Q.append((s,rt))
-                        
+            
+                
 def main():
     routes = create_routes()
     routes = add_stops(routes)
