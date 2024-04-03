@@ -40,7 +40,7 @@ def get_route_long_names():
     long_names =[]
     for route in data:
         long_names.append(route['attributes']['long_name'])
-    print(long_names)
+    return long_names
 
 def get_route_ids():
     data = make_api_call('routes?filter[type]=0,1')
@@ -110,8 +110,7 @@ def stop_to_route(routes):
             add.append(route)
             stop_to_route[stop] =add
     return stop_to_route
-
-#returns stops that connect 2 or more routes with connecting routes mapped  
+    
 def shared_stops(routes):
     stops_routes = stop_to_route(routes)
     shared_stops ={}       
@@ -165,18 +164,36 @@ def find_route(stop1,stop2,routes):
                         Q.append((s,rt))
             
                 
-def main():
-    if len(sys.argv) < 2:
-            print("Usage: python my_script.py [function_name]")
-            return
 
-    function_name = sys.argv[1]
-    if function_name == "question1":
-        get_route_long_names()
-        exit()
+if len(sys.argv) < 2:
+    print("Usage: python my_script.py [function_name]")
+
+function_name = sys.argv[1]
+routes = create_routes()
+routes = add_stops(routes)
+if function_name == "question1":
+    ln = get_route_long_names()
+    print(ln)
+    exit()
+elif function_name == "question2":    
+    max_s = get_route_max_stops(routes)
+    print(max_s)
+    min_s = get_route_min_stops(routes)
+    print(min_s)
+    ss = shared_stops(routes)
+    print(ss)
+    exit()
+elif function_name == "question3":
+    if len(sys.argv) == 4:
+        stop1 = sys.argv[2]
+        stop2 = sys.argv[3]
+        
+        fr = find_route(stop1,stop2,routes)
+        print(fr)
+        
 
         
-    else:
-        print("Unknown function:", function_name)
+else:
+    print("Unknown function:", function_name)
 
 
