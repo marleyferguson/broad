@@ -39,4 +39,4 @@ question. We will want you to understand and be able to explain how your algorit
 
 ### question3:
 #### % python3 mbta.py question3 'stop1' 'stop2'
-#### Note that stop1 and stop2 must be valid MBTA stops enclosed by single quotations, ie 'Wonderland' and 'Northeastern' are valid inputs
+#### Note that stop1 and stop2 must be valid MBTA stops enclosed by single quotations, ie 'Wonderland' and 'Northeastern University' are valid inputs
