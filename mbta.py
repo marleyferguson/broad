@@ -40,7 +40,7 @@ def get_route_long_names():
     long_names =[]
     for route in data:
         long_names.append(route['attributes']['long_name'])
-        return long_names
+        print(long_names)
 
 def get_route_ids():
     data = make_api_call('routes?filter[type]=0,1')
@@ -172,8 +172,8 @@ def main():
 
     function_name = sys.argv[1]
     if function_name == "question1":
-        names = get_route_long_names()
-        print(names)
+        get_route_long_names()
+
         
     else:
         print("Unknown function:", function_name)
