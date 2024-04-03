@@ -173,15 +173,16 @@ routes = create_routes()
 routes = add_stops(routes)
 if function_name == "question1":
     ln = get_route_long_names()
-    print(ln)
+    print('Route long names: ',ln)
     exit()
 elif function_name == "question2":    
     max_s = get_route_max_stops(routes)
-    print(max_s)
+    print('Route with the most stops: ', max_s)
     min_s = get_route_min_stops(routes)
-    print(min_s)
+    print('Route with the fewest stops: ', min_s)
     ss = shared_stops(routes)
-    print(ss)
+    for key, values in ss.items():
+        print(f"{key}: {', '.join(values)}")
     exit()
 elif function_name == "question3":
     if len(sys.argv) == 4:
