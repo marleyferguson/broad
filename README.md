@@ -1,5 +1,5 @@
 # Problem description
-Boston's transportation system, the MBTA (https://mbta.com/), has a website with APIs https://apiv3.mbta.com/docs/swagger/index.html.
+#### Boston's transportation system, the MBTA (https://mbta.com/), has a website with APIs https://apiv3.mbta.com/docs/swagger/index.html.
 The MBTA's documentation https://api-v3.mbta.com/docs/swagger/index.html 
 
 ## Question 1
@@ -27,16 +27,16 @@ upon the efficiency or cleverness of your route-finding solution. Pick a simple 
 question. We will want you to understand and be able to explain how your algorithm performs.
 
 # How to run
-% git clone https://github.com/marleyferguson/broad.git
-% cd /broad
+#### % git clone https://github.com/marleyferguson/broad.git
+#### % cd /broad
 
 ### question1:
-% python3 mbta.py question1
-For this question, option 2 was selected and the server API was relied on to filter before results are received. Transferring all the data through the API first would take more time which would slow down the program, especially in situations when more data/routes are added. 
+#### % python3 mbta.py question1
+#### For this question, option 2 was selected and the server API was relied on to filter before results are received. Transferring all the data through the API first would take more time which would slow down the program, especially in situations when more data/routes are added. 
 
 ### question2:
-% python3 mbta.py question2
+#### % python3 mbta.py question2
 
 ### question3:
-% python3 mbta.py question3 'stop1' 'stop2'
-Note that stop1 and stop2 must be valid MBTA stops enclosed by single quotations, ie 'Wonderland' and 'Northeastern' are valid inputs
+#### % python3 mbta.py question3 'stop1' 'stop2'
+#### Note that stop1 and stop2 must be valid MBTA stops enclosed by single quotations, ie 'Wonderland' and 'Northeastern' are valid inputs
