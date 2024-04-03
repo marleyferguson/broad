@@ -40,7 +40,7 @@ def get_route_long_names():
     long_names =[]
     for route in data:
         long_names.append(route['attributes']['long_name'])
-        print(long_names)
+    print(long_names)
 
 def get_route_ids():
     data = make_api_call('routes?filter[type]=0,1')
