@@ -166,7 +166,7 @@ def find_route(stop1,stop2,routes):
                 
 
 if len(sys.argv) < 2:
-    print("Usage: python my_script.py [function_name]")
+    print("Usage: python mbta.py [question_number]")
 
 function_name = sys.argv[1]
 routes = create_routes()
@@ -191,10 +191,15 @@ elif function_name == "question3":
         
         fr = find_route(stop1,stop2,routes)
         print(fr)
+        exit()
+    else:
+        print('Add two valid mbta stops')
+        exit()
         
 
         
 else:
-    print("Unknown function:", function_name)
+    print("Unknown question: ", function_name)
+    exit()
 
 
